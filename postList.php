@@ -7,6 +7,6 @@ while ($rowTmp = mysql_fetch_assoc($result)) {
 }
 ?>
 
-<?php foreach($row as $key => $value): ?>
-
+<?php foreach($row as $key => $val): ?>
+    <a href="postDetail.php?id=<?php echo $val['article_id']; ?>"><?php echo $val['article_title']; ?></a>
 <?php endforeach; ?>

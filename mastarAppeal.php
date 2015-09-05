@@ -7,3 +7,9 @@ $result = mysql_query($sql, $link) or die("クエリの送信に失敗しまし�
 $row = mysql_fetch_assoc($result);
 
 var_dump($row);
+?>
+
+
+<form action="mastarChose.php" method="post">
+    <button type="submit" name="match_id" value="<?php echo $row['match_id']; ?>">師匠になってもらう</button>
+</form>
