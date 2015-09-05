@@ -9,7 +9,7 @@ while ($rowTmp = mysql_fetch_assoc($result)) {
     $userData[] = $rowTmp;
 }
 
-$sql = "SELECT * FROM matching WHERE desi_user_id ='$user_id'";
+$sql = "SELECT *, count(*) AS 'count' FROM matching WHERE desi_user_id ='$user_id' GROUP BY article_id";
 $result = mysql_query($sql, $link) or die("クエリの送信に失敗しました。<br />SQL:".$sql);
 while ($rowTmp = mysql_fetch_assoc($result)) {
     $matching[] = $rowTmp;
@@ -17,5 +17,5 @@ while ($rowTmp = mysql_fetch_assoc($result)) {
 ?>
 
 <?php foreach($matching as $key => $val): ?>
-    a
+    <a href="./mastarList.php?article_id=<?php echo $val['article_id']; ?>">aaaaa</a>(<?php echo $val['count']; ?>)
 <?php endforeach; ?>
