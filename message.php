@@ -19,9 +19,8 @@ $user_id = mysql_fetch_assoc($result)['user_id'];
 if($user_id === $_SESSION['user'][0]){
     $sql = "SELECT desi_user_id FROM matching WHERE match_id ='$match_id'";
     $result = mysql_query($sql, $link) or die("クエリの送信に失敗しました。<br />SQL:".$sql);
-    $user_id = mysql_fetch_assoc($result)['user_id'];
+    $user_id = mysql_fetch_assoc($result)['desi_user_id'];
 }
-
 ?>
 
 <form method="post" action="db/sendMessage.php">
