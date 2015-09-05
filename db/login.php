@@ -10,15 +10,17 @@ if($_POST['userId'] && $_POST['password']){
     $sql = "SELECT * FROM user WHERE user_id = '$userId' AND password = '$password'";
     $result = mysql_query($sql, $link) or die("クエリの送信に失敗しました。<br />SQL:".$sql);
     $row = mysql_fetch_row($result);
-    if($row != null){
+    if($row != false){
         $_SESSION['user'] = $row;
+        $url = '../index.php';
+        header("Location: {$url}");
     }else{
-        $_SESSION['user'] = "ユーザー名またはパスワードが間違っています";
+        $_SESSION['error'] = "ユーザー名またはパスワードが間違っています";
         $url = '../index.php';
         header("Location: {$url}");
     }
 }else{
-    $_SESSION['user'] = "ユーザー名またはパスワードが間違っています";
+    $_SESSION['error'] = "ユーザー名またはパスワードが間違っています";
     $url = '../index.php';
     header("Location: {$url}");
 }

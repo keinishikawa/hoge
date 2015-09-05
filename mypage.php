@@ -1,6 +1,7 @@
 <?php
+include "tpl/header.php";
+
 require_once "./db/db.php";
-session_start();
 $user_id = $_SESSION['user'][0];
 
 $sql = "SELECT * FROM user WHERE user_id ='$user_id'";
@@ -31,3 +32,5 @@ while ($rowTmp = mysql_fetch_assoc($result)) {
         <a href="./mastarList.php?article_id=<?php echo $val['article_id']; ?>">aaaaa</a>(<?php echo $val['count']; ?>)
     <?php endif; ?>
 <?php endforeach; ?>
+
+<?php include "tpl/footer.php"; ?>
