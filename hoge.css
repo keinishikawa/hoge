@@ -1,0 +1,119 @@
+
+a {
+    color: #42dca3;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: red;
+}
+
+a.btn-success{
+    margin: 10px 30px;
+    width:300px;
+    height: 300px;
+    line-height: 300px;
+    font-size: 350%;
+}
+
+a.btn-danger{
+    margin-top:60px;
+    margin-bottom:40px;
+}
+
+textarea{
+    resize: none;
+}
+
+button{
+    margin-top:3px;
+    margin-bottom:3px;
+}
+
+/*
+.test-animation{
+     -webkit-animation-duration: 3s;
+     -moz-animation-duration: 3s;
+     animation-duration: 3s;
+}
+
+*/
+/*********************************************************************
+
+
+                                HEADER
+
+
+**********************************************************************/
+#head {
+  background: #f4f4f4 url(img/finland.jpg) top center;
+  background-size: cover;
+  color: #FFFFFF;
+  padding: 10px 0 10px 0;
+  height:782px;
+}
+
+#head p{
+    margin-top:5px;
+    margin-bottom:20px;
+}
+#head #test {
+  size: 60px;
+}
+
+#head .title {
+  font-family: Alice, Georgia, serif;
+  font-size: 100px;
+}
+#head .title a {
+  text-decoration: none;
+  color: #333333;
+}
+#head .tagline {
+  display: block;
+  line-height: 1.2em;
+  color: #FFFFFF;
+  margin: 5px 0 0;
+  text-align:left;
+}
+#head .tagline b {
+  font-weight: normal;
+}
+#head .tagline a {
+  color: #5E5E5E;
+}
+.home #head {
+  padding: 90px 0;
+}
+
+h1#about{
+  margin-bottom:40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
