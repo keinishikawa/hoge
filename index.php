@@ -30,10 +30,11 @@
 
                     <div class="col-md-3">
                         <?php if(!array_key_exists("user",$_SESSION)):?>
-                            <form method="post" action="./db/login.php">
+                            <form method="post" action="./db/login.php" style="margin: 20px 0;">
                                 ID:<input type="text" name="userId">
                                 PW:<input type="password" name="password">
-                                <button type="submit">Login</button>
+                                <button type="submit" class="btn btn-success btn-lg">Login</button>
+                                <a class="btn btn-lg btn-danger" href="regist.php" style="margin: 0;">新規登録</a>
                             </form>
                         <?php else: ?>
                             <br>
