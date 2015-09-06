@@ -39,3 +39,8 @@ body{
     margin: 50px auto 0;
     width: 80%;
 }
+#message{
+    border: solid 1px #000;
+    height: 400px;
+    overflow: scroll;
+}
