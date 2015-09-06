@@ -37,9 +37,9 @@ button{
 
 
 .test-animation{
-     -webkit-animation-duration: 3s;
-     -moz-animation-duration: 3s;
-     animation-duration: 5s;
+     -webkit-animation-duration: 2s;
+     -moz-animation-duration: 2s;
+     animation-duration: 2s;
 }
 
 .help{
@@ -56,7 +56,11 @@ background-repeat: no-repeat;
 }
 
 .move2{
-  margin:300px 450px;
+  margin:250px 425px;
+}
+
+.move3{
+   margin:250px 425px;
 }
 
 /*********************************************************************
