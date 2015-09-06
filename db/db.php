@@ -1,7 +1,7 @@
 <?php
 $url = "localhost:8888";
 $user = "root";
-$pass = "root";
+$pass = "";
 $db = "hoge";
 // MySQLへ接続する
 $link = mysql_connect($url,$user,$pass) or die("MySQLへの接続に失敗しました。");

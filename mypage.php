@@ -39,13 +39,26 @@ $result = mysql_query($sql, $link) or die("クエリの送信に失敗しまし�
 while ($rowTmp = mysql_fetch_assoc($result)) {
     $chose[] = $rowTmp['article_id'];
 }
+
+$sql = "SELECT count(*) AS 'count' , SUM(evaluation) AS 'sum' FROM help WHERE user_id ='$user_id'";
+$result = mysql_query($sql, $link) or die("クエリの送信に失敗しました。<br />SQL:".$sql);
+$row = mysql_fetch_assoc($result);
+if($row['sum'] === null){
+    $count = 0;
+    $sum = 0;
+    $average = 0;
+}else{
+    $count = $row['count'];
+    $sum = $row['sum'];
+    $average = $sum / $count;
+}
 ?>
 
 <h1>プロフィール</h1>
 <br>
 <h2>ニックネーム：<?php echo $userData['user_name']; ?></h2>
 <br>
-<h2>教え子：２人 平均評価：５</h2>
+<h2>教え子：<?php echo $sum; ?>人 平均評価：<?php echo $average; ?></h2>
 <br>
 <h3>自己PR:</h3>
 <h3>

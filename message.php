@@ -50,5 +50,17 @@ if($user_id === $_SESSION['user'][0]){
     <input type="hidden" name="match_id" value="<?php echo $match_id; ?>">
     <button type="submit" class="btn btn-lg btn-primary" style="width: 100%;">送信</button>
 </form>
-
+<h1>評価</h1>
+<form action="review.php" method="post">
+    <input type="hidden" name="user_id"  value="<?php echo $user_id; ?>">
+<select class="form-control" name="star">
+    <option value="1">★</option>
+    <option value="2">★★</option>
+    <option value="3">★★★</option>
+    <option value="4">★★★★</option>
+    <option value="5">★★★★★</option>
+</select>
+    <textarea rows="3"  class="form-control" name="review"></textarea>
+    <button class="btn">終了したので評価する</button>
+</form>
 <?php include "tpl/footer.php"; ?>
