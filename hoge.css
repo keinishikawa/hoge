@@ -42,6 +42,23 @@ button{
      animation-duration: 5s;
 }
 
+.help{
+  background-image:url(http://minkabe.com/uploads/ab9ebd57177b5106ad7879f0896685d4.jpg);
+color:white;
+background-size: cover;
+background-repeat: no-repeat;
+
+}
+
+.move{
+ margin: 200px 300px;
+
+}
+
+.move2{
+  margin:300px 450px;
+}
+
 /*********************************************************************
 
 
@@ -50,7 +67,7 @@ button{
 
 **********************************************************************/
 #head {
-  background: #f4f4f4 url(img/finland.jpg) top center;
+  background: #f4f4f4 url(http://minkabe.com/uploads/ab9ebd57177b5106ad7879f0896685d4.jpg) top center;
   background-size: cover;
   color: #FFFFFF;
   padding: 10px 0 10px 0;
