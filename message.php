@@ -24,6 +24,10 @@ if($user_id === $_SESSION['user'][0]){
     $user_id = mysql_fetch_assoc($result)['desi_user_id'];
 }
 
+
+
+
+
 ?>
 <div id="message">
     <?php foreach($message as $key => $val): ?>

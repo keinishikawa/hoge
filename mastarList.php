@@ -10,6 +10,8 @@ $result = mysql_query($sql, $link) or die("クエリの送信に失敗しまし�
 while ($rowTmp = mysql_fetch_assoc($result)) {
     $mastars[] = $rowTmp;
 }
+
+var_dump($mastars);
 ?>
 <h1>師匠希望者一覧</h1>
 <br>
@@ -26,8 +28,10 @@ while ($rowTmp = mysql_fetch_assoc($result)) {
         </tr>
     </thead>
 <?php foreach($mastars as $key => $val): ?>
+    <?php var_dump($val); ?>
+    <?php var_dump($val['user_id']); ?>
     <tr>
-        <td><a href="./mastarAppeal.php?match_id=<?php echo $val['match_id'] ?>"><?php echo $val['user_id']; ?></a></td>
+        <td><a href="./mastarAppeal.php?match_id=<?php echo $val['match_id']; ?>"><?php echo $val['user_id']; ?></a></td>
         <td></td>
     </tr>
 <?php endforeach; ?>

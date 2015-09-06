@@ -1,6 +1,7 @@
 <?php
 include "tpl/header.php";
-
+$matching = [];
+$chose = [];
 require_once "./db/db.php";
 $user_id = $_GET['user_id'];
 
@@ -16,7 +17,7 @@ while ($rowTmp = mysql_fetch_assoc($result)) {
 }
 
 //師匠になる
-if(!isset($matching)){
+if(count($matching) === 0){
     //何件あったか
     $sql = "SELECT * FROM matching , article WHERE matching.article_id = article.article_id AND matching.user_id ='$user_id' GROUP BY matching.article_id";
     $result = mysql_query($sql, $link) or die("クエリの送信に失敗しました。<br />SQL:".$sql);
