@@ -20,6 +20,12 @@ a.btn-success{
     font-size: 350%;
 }
 
+a.btn-warning{
+  width:700px;
+  height:50px;
+  margin-top: 20px;
+  padding-top: 15px;
+}
 a.btn-danger{
     margin-top:60px;
     margin-bottom:40px;
