@@ -15,9 +15,10 @@
         <div id="userData">
             <?php if(!array_key_exists("user",$_SESSION)):?>
                 <form method="post" action="./db/login.php">
-                     ID:<input type="text" name="userId">
-                     PW:<input type="password" name="password">
-                     <button type="submit">Login</button>
+                     <input type="text" name="userId" placeholder="ID" style="height:30px">
+                     <input type="password" name="password" placeholder="password" style="height:30px">
+                     <button type="submit" style="height:30px">Login</button>
+
                  </form>
             <?php else: ?>
                 ようこそ<a href="mypage.php?user_id=<?php echo $_SESSION['user'][0] ?>"><?php echo $_SESSION['user'][1] ?>さん</a>

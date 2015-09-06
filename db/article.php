@@ -19,3 +19,7 @@ $result = mysql_query($sql, $link) or die("クエリの送信に失敗しまし�
 
 // MySQLへの接続を閉じる
 mysql_close($link) or die("MySQL切断に失敗しました。");
+
+
+$url = '../postList.php';
+header("Location: {$url}");

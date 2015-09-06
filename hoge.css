@@ -34,6 +34,7 @@ button{
     margin-bottom:3px;
 }
 
+
 /*
 .test-animation{
      -webkit-animation-duration: 3s;
@@ -55,6 +56,10 @@ button{
   color: #FFFFFF;
   padding: 10px 0 10px 0;
   height:782px;
+}
+#head input{
+    color: #000;
+    font-size: 24px;
 }
 
 #head p{
