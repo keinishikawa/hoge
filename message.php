@@ -7,6 +7,7 @@ $match_id = $_GET['match_id'];
 //メッセージを全取得
 $sql = "SELECT * FROM message WHERE match_id ='$match_id'";
 $result = mysql_query($sql, $link) or die("クエリの送信に失敗しました。<br />SQL:".$sql);
+$message = [];
 while ($rowTmp = mysql_fetch_assoc($result)) {
     $message[] = $rowTmp;
 }
@@ -26,12 +27,13 @@ if($user_id === $_SESSION['user'][0]){
 ?>
 <div id="message">
     <?php foreach($message as $key => $val): ?>
-        <?php if($val['send_user_id'] === $user_id): ?>
+        <?php if($val['send_user_id'] !== $user_id): ?>
             <div class="myMessage">
                 <?php echo $val['message']; ?>
             </div>
         <?php else: ?>
             <div class="receiveMessage">
+                <p>ID:<?php echo $val['send_user_id'] ?></p>
                 <?php echo $val['message']; ?>
             </div>
         <?php endif; ?>

@@ -12,7 +12,24 @@ $userData = mysql_fetch_assoc($result);
 $sql = "SELECT *, count(*) AS 'count' FROM matching , article WHERE matching.article_id = article.article_id AND desi_user_id ='$user_id' GROUP BY matching.article_id";
 $result = mysql_query($sql, $link) or die("クエリの送信に失敗しました。<br />SQL:".$sql);
 while ($rowTmp = mysql_fetch_assoc($result)) {
-    $matching[] = $rowTmp;
+    $matching[] = $rowTmp;$sisho=false;
+}
+
+//師匠になる
+if(!isset($matching)){
+    //何件あったか
+    $sql = "SELECT * FROM matching , article WHERE matching.article_id = article.article_id AND matching.user_id ='$user_id' GROUP BY matching.article_id";
+    $result = mysql_query($sql, $link) or die("クエリの送信に失敗しました。<br />SQL:".$sql);
+    while ($rowTmp = mysql_fetch_assoc($result)) {
+        $matching[] = $rowTmp;
+    }
+    //すでに師匠が決まってる
+    $sql = "SELECT article_id FROM matching WHERE user_id ='$user_id' AND chose_flag = 1 GROUP BY article_id";
+    $result = mysql_query($sql, $link) or die("クエリの送信に失敗しました。<br />SQL:".$sql);
+    while ($rowTmp = mysql_fetch_assoc($result)) {
+        $chose[] = $rowTmp['article_id'];
+    }
+    $sisho = true;
 }
 
 //すでに師匠が決まってる
@@ -51,12 +68,22 @@ while ($rowTmp = mysql_fetch_assoc($result)) {
     </thead>
 <?php foreach($matching as $key => $val): ?>
     <tr>
+        <?php if($sisho): ?>
         <td>師匠します</td>
         <td><?php echo $val['article_title']; ?></td>
-        <?php if(in_array($val['article_id'], $chose)): ?>
-            <td><a href="message.php?match_id=<?php echo $val['match_id']; ?>">メッセージ</a></td>
+            <?php if(in_array($val['article_id'], $chose)): ?>
+                <td><a href="message.php?match_id=<?php echo $val['match_id']; ?>">メッセージ</a></td>
+            <?php else: ?>
+                <td>まだ反応がないよ</td>
+            <?php endif; ?>
         <?php else: ?>
-            <td><a href="./mastarList.php?article_id=<?php echo $val['article_id']; ?>"><?php echo $val['count']; ?>件の反応があります</a></td>
+            <td>弟子します</td>
+            <td><?php echo $val['article_title']; ?></td>
+            <?php if(in_array($val['article_id'], $chose)): ?>
+                <td><a href="message.php?match_id=<?php echo $val['match_id']; ?>">メッセージ</a></td>
+            <?php else: ?>
+                <td><a href="./mastarList.php?article_id=<?php echo $val['article_id']; ?>"><?php echo $val['count']; ?>件の反応があります</a></td>
+            <?php endif; ?>
         <?php endif; ?>
     </tr>
 <?php endforeach; ?>

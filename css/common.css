@@ -44,3 +44,20 @@ body{
     height: 400px;
     overflow: scroll;
 }
+.myMessage{
+    height: 100px;
+    width: 400px;
+    padding: 20px;
+    margin: 30px 30px 30px 300px;
+    background-color: #5bc7cc;
+    float: right;
+
+}
+.receiveMessage{
+    height: 100px;
+    width: 400px;
+    padding: 20px;
+    margin: 30px 300px 30px 30px;
+    background-color: #cc8f38;
+    float: left;
+}

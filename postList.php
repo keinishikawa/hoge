@@ -2,7 +2,7 @@
 
 <?php
 require_once "./db/db.php";
-$sql = "SELECT * FROM article";
+$sql = "SELECT * FROM article ORDER BY article_id DESC";
 $result = mysql_query($sql, $link) or die("クエリの送信に失敗しました。<br />SQL:".$sql);
 while ($rowTmp = mysql_fetch_assoc($result)) {
     $row[] = $rowTmp;
