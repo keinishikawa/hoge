@@ -20,10 +20,6 @@ $row = mysql_fetch_assoc($result);
     </h3>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
     <form action="db/match.php" method="post">
         <textarea name="appeal" class="form-control" rows="3" placeholder="師匠の熱い魂を注いであげてください！"></textarea>
         <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
